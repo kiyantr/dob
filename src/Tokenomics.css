@@ -1,99 +1,125 @@
+:root {
+  --primary: #9b7127;
+  --textColor: var(--primary);
+}
+
+.tokenomics {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 /* Tokenomics.css */
 .tokenomics-container {
-    background: linear-gradient(145deg, #e6f0ff, #f8faff); /* Light blue gradient background */
-    padding: 40px;
-    border-radius: 15px;
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(
+    145deg,
+    #d9c485,
+    #f8faff
+  ); /* Light blue gradient background */
+  padding: 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .tokenomics-container {
+    max-width: 400px;
   }
-  
-  .tokenomics-container:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tokenomics-container:hover {
+  /* transform: translateY(-5px); */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  color: var(--primary); /* Darker blue for headings */
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.total-supply h3,
+.distribution h3 {
+  color: var(--primary);
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.total-supply p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff6dc;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.distribution ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.distribution li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.distribution li:hover {
+  background-color: #fff3c4;
+  transform: translateY(-3px); /* Lift on hover */
+}
+
+.distribution-name {
+  color: #000;
+  font-weight: 600;
+}
+
+.distribution-percentage {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .tokenomics-container {
+    padding: 30px;
   }
-  
+
   h2 {
-    color: #003b99; /* Darker blue for headings */
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    font-size: 1.8rem;
   }
-  
-  .total-supply h3, .distribution h3 {
-    color: #0072ff;
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  
+
   .total-supply p {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #004466;
-    background-color: #f0f8ff;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
-  }
-  
-  .distribution ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .distribution li {
-    display: flex;
-    justify-content: space-between;
     font-size: 1.2rem;
-    padding: 15px 20px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, background-color 0.3s ease;
   }
-  
-  .distribution li:hover {
-    background-color: #f0f8ff;
-    transform: translateY(-3px); /* Lift on hover */
+
+  .distribution li {
+    font-size: 1rem;
+    padding: 10px 15px;
   }
-  
-  .distribution-name {
-    color: #003b99;
-    font-weight: 600;
-  }
-  
-  .distribution-percentage {
-    font-weight: bold;
-    color: #0072ff;
-  }
-  
-  @media (max-width: 768px) {
-    .tokenomics-container {
-      padding: 30px;
-    }
-  
-    h2 {
-      font-size: 1.8rem;
-    }
-  
-    .total-supply p {
-      font-size: 1.2rem;
-    }
-  
-    .distribution li {
-      font-size: 1rem;
-      padding: 10px 15px;
-    }
-  }
-  
+}

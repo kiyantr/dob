@@ -1,11 +1,15 @@
 /* src/App.css */
-
+:root {
+  --primary: #9b7127;
+  --textColor: var(--primary);
+}
 /* Global styles */
 body {
   margin: 0;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: #fffdf9;
   /* background-color: #f3f4f6;  */
-  color: #1e3a8a; /* Main professional blue */
+  color: var(--primary); /* Main professional blue */
 }
 
 .App {
@@ -22,9 +26,9 @@ body {
   text-align: center;
   padding: 20px;
   /* background-color: #EBC9A3; */
-  color: #1e3a8a;
+  color: var(--primary);
   width: 100%;
-  
+
   animation: slideIn 1s ease-in-out; /* Slide-in animation */
 }
 
@@ -33,14 +37,27 @@ body {
   margin: 0;
 }
 
-.about, .gallery, .cta, footer {
+.about,
+.gallery,
+.cta,
+footer {
   text-align: center;
   padding: 20px;
   width: 100%;
+  margin-top: 50px;
 }
 
 .about {
   animation: fadeIn 1.5s ease-in-out; /* Fading effect */
+}
+
+.about p {
+  padding-left: 20%;
+  padding-right: 20%;
+  font-size: 1.5rem;
+}
+.about b {
+  font-weight: 600;
 }
 
 /* Updated Gallery Section Styles */
@@ -50,7 +67,6 @@ body {
 }
 
 .image-gallery {
-  
   display: flex; /* Use flexbox to align items in a row */
   justify-content: center; /* Center the items horizontally */
   flex-wrap: wrap; /* Allow wrapping for smaller screens */
@@ -79,26 +95,29 @@ body {
 }
 
 button {
-  background-color: #3b82f6; /* Lighter blue for buttons */
+  background-color: var(--primary); /* Lighter blue for buttons */
   color: white;
   border: none;
-  padding: 12px 24px;
-  margin: 10px;
+  padding: 24px 48px;
+  margin: 20px;
   cursor: pointer;
   font-size: 18px;
-  border-radius: 8px;
+  border-radius: 100px;
   font-weight: bold;
   text-transform: uppercase;
-  animation: fadeIn 2s ease-in-out; /* Fade-in effect */
+  border: 1px solid #fff;
+  transition: all 0.1s ease;
 }
 
 button:hover {
-  background-color: #2563eb; /* Darker blue on hover */
+  transform: scale(1.2);
+  transition: all 0.1s ease;
+  background-color: #774e08; /* Darker blue on hover */
 }
 
 footer {
   /* background-color: #EBC9A3; */
-  color: #1e3a8a;
+  color: var(--primary);
   padding: 20px;
   width: 100%;
   animation: slideIn 1s ease-in-out; /* Slide-in animation */
@@ -116,17 +135,17 @@ footer li {
 }
 
 footer a {
-  color: #1e3a8a;
+  color: var(--primary);
   text-decoration: none;
   font-weight: bold;
 }
 
 .head-text {
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
 .signature {
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 /* Animations */
@@ -164,4 +183,22 @@ footer a {
   .App {
     margin: 0 20px;
   }
+
+  .about p {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+footer a {
+  padding-top: 20px;
+  font-size: 2rem;
+  /* text-decoration: underline; */
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+.dogebite-img {
+  width: 200px;
+  height: 200px;
 }

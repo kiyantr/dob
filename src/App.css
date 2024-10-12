@@ -1,38 +1,167 @@
+/* src/App.css */
+
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  /* background-color: #f3f4f6;  */
+  color: #1e3a8a; /* Main professional blue */
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  min-height: 100vh;
+  margin: 0 50px;
+  animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  /* background-color: #EBC9A3; */
+  color: #1e3a8a;
+  width: 100%;
+  
+  animation: slideIn 1s ease-in-out; /* Slide-in animation */
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.about, .gallery, .cta, footer {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.about {
+  animation: fadeIn 1.5s ease-in-out; /* Fading effect */
+}
+
+/* Updated Gallery Section Styles */
+
+.gallery {
+  padding: 20px 20px; /* Add padding to top and bottom, and a bit to the sides */
+}
+
+.image-gallery {
+  
+  display: flex; /* Use flexbox to align items in a row */
+  justify-content: center; /* Center the items horizontally */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 10px; /* Space between images */
+}
+
+.image-container {
+  width: 300px; /* Fixed width for each image container */
+  height: 300px; /* Fixed height for each image container */
+  overflow: hidden; /* Prevent overflow */
+  border-radius: 10px; /* Rounded corners */
+  display: flex; /* Center content */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+.image-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  transition: transform 0.3s ease-in-out; /* Animation for hover effect */
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05); /* Zoom in slightly on hover */
+}
+
+button {
+  background-color: #3b82f6; /* Lighter blue for buttons */
   color: white;
+  border: none;
+  padding: 12px 24px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: fadeIn 2s ease-in-out; /* Fade-in effect */
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #2563eb; /* Darker blue on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+footer {
+  /* background-color: #EBC9A3; */
+  color: #1e3a8a;
+  padding: 20px;
+  width: 100%;
+  animation: slideIn 1s ease-in-out; /* Slide-in animation */
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+footer li {
+  margin: 0 15px;
+}
+
+footer a {
+  color: #1e3a8a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.head-text {
+  font-size: 5rem;
+}
+
+.signature {
+  font-size: 4rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .image-gallery img {
+    max-width: 100%;
+  }
+
+  button {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .App {
+    margin: 0 20px;
   }
 }

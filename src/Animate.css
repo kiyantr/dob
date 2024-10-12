@@ -1,0 +1,66 @@
+/* App.css */
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  padding: 20px;
+}
+
+.gallery {
+  margin: 40px;
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.image-container {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  transform: scale(0); /* Start scale at 0 (invisible) */
+  transition: transform 0.5s ease-in-out;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Initial page load animation */
+.image-container.animate {
+  transform: scale(1); /* Grow to full size */
+  animation: growAnimation 0.7s ease-in-out forwards;
+}
+
+/* Animation to grow images on load */
+@keyframes growAnimation {
+  0% {
+    transform: scale(0.5); /* Start smaller */
+  }
+  100% {
+    transform: scale(1); /* End at normal size */
+}
+}
+
+.image-container img {
+  animation: subtleZoom 5s ease-in-out infinite; /* Continuous subtle animation */
+}
+
+@keyframes subtleZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05); /* Zoom in slightly */
+  }
+  100% {
+    transform: scale(1);
+  }
+}

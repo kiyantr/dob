@@ -1,0 +1,33 @@
+/* App.css */
+.truncate-container {
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .truncate-text {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .copy-icon {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #007bff;
+    transition: color 0.3s ease;
+  }
+  
+  .copy-icon:hover {
+    color: #0056b3;
+  }
+  
+  .copied-confirmation {
+    font-size: 0.8rem;
+    color: green;
+    margin-left: 10px;
+  }
+  

@@ -19,7 +19,7 @@
   ); /* Light blue gradient background */
   padding: 40px;
   border-radius: 15px;
-  width: 100%;
+  /* width: 100%; */
   max-width: 700px;
   margin: 0 auto;
   text-align: center;

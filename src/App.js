@@ -19,8 +19,8 @@ const images2 = importAll(
 const tokenomicsData = {
   totalSupply: "1,000,000,000 $DOB",
   distribution: [
-    { name: "90% Burned LP", percentage: 90 },
-    { name: "10% Airdrop to the Sui community", percentage: 10 },
+    { name: "100% Liquidity pool", percentage: 100 },
+    { name: "0% Tax", percentage: 0 },
   ],
 };
 

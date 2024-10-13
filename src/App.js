@@ -25,6 +25,10 @@ const tokenomicsData = {
 };
 
 function App() {
+  function handleBuynow() {
+    const url = 'https://movepump.com/token/0x06d09005836c5e6c206b2d50e18bacaf52acc855bea86f0a8cc3a02a6e835bb0::dob::DOB';
+    window.open(url, '_blank');
+  }
   return (
     <div className="App">
       <header className="header">
@@ -42,9 +46,9 @@ function App() {
           us, the Dog's not happy about it! 🐶💥
         </p> */}
 
-        <button>Buy Now</button>
+        <button onClick={handleBuynow}>Buy Now</button>
         {/* <button>Join the Dog Dinner Party</button> */}
-        <LongText text={`CA: coming soon`} />
+        <LongText text={`0x06d09005836c5e6c206b2d50e18bacaf52acc855bea86f0a8cc3a02a6e835bb0::dob::DOB`} />
       </section>
       <Tokenomics
         totalSupply={tokenomicsData.totalSupply}

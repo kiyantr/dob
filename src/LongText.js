@@ -8,7 +8,7 @@ function LongText({ text }) {
   // Function to truncate text in the middle
   const truncateText = (str, max) => {
     if (str.length <= max) return str;
-    const start = str.slice(0, max / 2);
+    const start = str.slice(0, 6);
     const end = str.slice(-8);
     return `${start}...${end}`;
   };
@@ -16,21 +16,29 @@ function LongText({ text }) {
   // Function to handle copying text to clipboard
   const handleCopy = () => {
     navigator.clipboard.writeText(text).then(() => {
+      // Show copied message
       setCopied(true);
-      setTimeout(() => setCopied(false), 1500); // Reset after 1.5 seconds
+
+      // Hide the message after 2 seconds
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
     });
   };
 
   return (
-    <div className="truncate-container">
-      <span className="truncate-text" title={text}>
-        {truncateText(text, 50)}
-      </span>
-      <span className="copy-icon" onClick={handleCopy}>
-        <FiCopy />
-      </span>
-      {copied && <span className="copied-confirmation">Copied!</span>}
-    </div>
+    <>
+      <div className="truncate-container">
+        <span className="truncate-text" title={text}>
+          {truncateText(text, 50)}
+        </span>
+        <span className="copy-icon" onClick={handleCopy}>
+          <FiCopy />
+        </span>
+        {/* Copied Message */}
+      </div>
+      {copied && <div className="copied-message">Copied!</div>}
+    </>
   );
 }
 
